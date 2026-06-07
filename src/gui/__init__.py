@@ -1,0 +1,1 @@
+"""GUI-клиент аимбота (CustomTkinter)."""

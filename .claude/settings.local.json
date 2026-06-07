@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(update-config)",
+      "Bash(python *)",
+      "Bash(./.venv/Scripts/python.exe -m pip install --upgrade pip -q)",
+      "Bash(./.venv/Scripts/python.exe --version)",
+      "Bash(./.venv/Scripts/python.exe -m pip --version)",
+      "Bash(./.venv/Scripts/python.exe -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124 --timeout 180 --retries 10)",
+      "Bash(./.venv/Scripts/python.exe -m pip install ultralytics --timeout 180 --retries 10)",
+      "Bash(./.venv/Scripts/python.exe -c \"import torch, ultralytics; print\\('torch', torch.__version__, '| cuda available:', torch.cuda.is_available\\(\\), '|', torch.cuda.get_device_name\\(0\\) if torch.cuda.is_available\\(\\) else 'NO GPU'\\); print\\('ultralytics', ultralytics.__version__\\)\")",
+      "Bash(./.venv/Scripts/python.exe -m pip install bettercam --timeout 120 --retries 10)",
+      "Bash(./.venv/Scripts/python.exe -c \"import importlib.metadata as m; print\\('bettercam', m.version\\('bettercam'\\)\\)\")",
+      "Bash(./.venv/Scripts/python.exe *)"
+    ]
+  }
+}

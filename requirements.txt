@@ -1,0 +1,15 @@
+# Зависимости проекта. Python 3.11, Windows, NVIDIA GPU (CUDA 12.4).
+#
+# Установка с нуля:
+#   python -m venv .venv
+#   .venv\Scripts\python -m pip install -U pip
+#   .venv\Scripts\python -m pip install -r requirements.txt
+#
+# torch/torchvision берутся со спец-индекса PyTorch (сборка с CUDA 12.4):
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+torch==2.6.0
+torchvision==0.21.0
+ultralytics==8.4.61
+bettercam==1.0.0
+customtkinter==5.2.2
