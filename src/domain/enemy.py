@@ -2,6 +2,7 @@
 
 from dataclasses import dataclass
 
+from .enemy_head import EnemyHead
 from .geometry import Box
 
 
@@ -10,27 +11,17 @@ class Enemy:
     """
     Один обнаруженный враг.
 
-    Способ детекции выбран как «враг + голова» (2 класса YOLO):
-      • body  — бокс всего силуэта (класс 'enemy'). Обязателен: это «якорь»,
-                без него врага нет.
-      • head  — отдельный бокс (класс 'head'). Может быть None, если голову
-                не видно или детектор её не нашёл.
-      • legs  — пока отдельно не детектим. Задел на будущее (выведем из нижней
-                части body, если понадобится). По умолчанию None.
+      • body — бокс всего силуэта (класс 'enemy'). Обязателен: это «якорь»,
+               без него врага нет.
+      • head — бокс головы (класс 'enemy_head'); детектор привязывает его к телу.
+               None, если голова не обнаружена (или веса без класса головы).
+      • legs — пока отдельно не детектим. Задел на будущее.
 
     confidence — уверенность детектора для тела, 0..1.
+    Куда целиться внутри врага, решает src.aim.targeting.aim_point (учитывает конфиг).
     """
 
     body: Box
-    head: Box | None = None
+    head: Box | EnemyHead | None = None
     legs: Box | None = None
     confidence: float = 0.0
-
-    @property
-    def aim_point(self) -> tuple[float, float]:
-        """
-        Куда целиться. Приоритет — голова (хедшот);
-        если головы нет — центр тела.
-        """
-        target = self.head if self.head is not None else self.body
-        return target.center

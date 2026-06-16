@@ -11,7 +11,17 @@
       "Bash(./.venv/Scripts/python.exe -c \"import torch, ultralytics; print\\('torch', torch.__version__, '| cuda available:', torch.cuda.is_available\\(\\), '|', torch.cuda.get_device_name\\(0\\) if torch.cuda.is_available\\(\\) else 'NO GPU'\\); print\\('ultralytics', ultralytics.__version__\\)\")",
       "Bash(./.venv/Scripts/python.exe -m pip install bettercam --timeout 120 --retries 10)",
       "Bash(./.venv/Scripts/python.exe -c \"import importlib.metadata as m; print\\('bettercam', m.version\\('bettercam'\\)\\)\")",
-      "Bash(./.venv/Scripts/python.exe *)"
+      "Bash(./.venv/Scripts/python.exe *)",
+      "Bash(grep -oE '\\\\.[a-zA-Z0-9]+$')",
+      "Bash(echo \"=== current epoch / latest metrics ===\")",
+      "Bash(grep -aE '^ *all |Epoch ' C:/Users/MAKOK/AppData/Local/Temp/claude/S--Yolo-main/24f922ff-1bae-43f2-9167-296a663983cf/tasks/b8528tuh5.output)",
+      "Bash(export SSL_CERT_FILE=\"S:/Yolo-main/.venv/win-ca-bundle.pem\")",
+      "Bash(export REQUESTS_CA_BUNDLE=\"S:/Yolo-main/.venv/win-ca-bundle.pem\")",
+      "Bash(S:/Yolo-main/.venv/Scripts/python.exe -c ' *)",
+      "Bash(command -v python)",
+      "Bash(./.venv/Scripts/python *)",
+      "PowerShell(winget upgrade *)",
+      "Bash(awk '{printf \"%6.1f MB %s\\\\n\", $5/1048576, $9}')"
     ]
   }
 }

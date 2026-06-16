@@ -3,3 +3,26 @@ venv/
 __pycache__/
 *.pyc
 .env
+
+# модели и веса — большие бинарники, не для git
+*.pt
+*.engine
+*.onnx
+
+# датасеты и результаты обучения (десятки ГБ)
+dataset/
+datasets/
+runs/
+debug/
+logs/
+*.log
+
+# внешние библиотеки и бинарники
+Interception/
+_external/
+_backup_valid/
+*.exe
+handle64.exe
+
+# IDE
+.vscode/
